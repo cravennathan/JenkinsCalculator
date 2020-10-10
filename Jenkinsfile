@@ -1,15 +1,19 @@
 pipeline {
-    agent any
     environment {
         registry = "cravennathan/jenkins-calculator"
         registryCredential = 'dockerhub'
         dockerImage=''
     }
+
+    agent any
+
     tools {
         maven 'apache maven 3.6.3'
         jdk 'JDK 8'
     }
+
     stages {
+
         stage ('Clean') {
             steps {
                 sh 'mvn clean'
@@ -47,7 +51,7 @@ pipeline {
             }
         }
 
-        stage ('Building imgage') {
+        stage ('Building image') {
             steps {
                 script {
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
@@ -58,7 +62,7 @@ pipeline {
         stage ('Deploy Image') {
             steps {
                 script { 
-                    docker.withRegistry('', registryCredential) {
+                    docker.withRegistry( '', registryCredential ) {
                         dockerImage.push()
                     }
                 }
