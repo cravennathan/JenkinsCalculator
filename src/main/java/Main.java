@@ -14,6 +14,8 @@ public class Main {
                 continue;
             }
             String functionName = commandArr[0];
+            int arg1;
+            int arg2;
             switch (functionName.toLowerCase()) {
                 case "exit":
                     return;
@@ -22,8 +24,8 @@ public class Main {
                         System.out.println("must have two arguments.");
                         continue;
                     }
-                    int arg1 = Integer.parseInt(commandArr[1]);
-                    int arg2 = Integer.parseInt(commandArr[2]);
+                    arg1 = Integer.parseInt(commandArr[1]);
+                    arg2 = Integer.parseInt(commandArr[2]);
                     System.out.println(calc.add(arg1, arg2));
                     break;
                 case "subtract":
@@ -31,8 +33,8 @@ public class Main {
                         System.out.println("must have two arguments.");
                         continue;
                     }
-                    int arg1 = Integer.parseInt(commandArr[1]);
-                    int arg2 = Integer.parseInt(commandArr[2]);
+                    arg1 = Integer.parseInt(commandArr[1]);
+                    arg2 = Integer.parseInt(commandArr[2]);
                     System.out.println(calc.subtract(arg1, arg2));
                     break;
                 case "multiply":
@@ -40,8 +42,8 @@ public class Main {
                         System.out.println("must have two arguments.");
                         continue;
                     }
-                    int arg1 = Integer.parseInt(commandArr[1]);
-                    int arg2 = Integer.parseInt(commandArr[2]);
+                    arg1 = Integer.parseInt(commandArr[1]);
+                    arg2 = Integer.parseInt(commandArr[2]);
                     System.out.println(calc.multiply(arg1, arg2));
                     break;
                 case "divide":
@@ -49,8 +51,8 @@ public class Main {
                         System.out.println("must have two arguments.");
                         continue;
                     }
-                    int arg1 = Integer.parseInt(commandArr[1]);
-                    int arg2 = Integer.parseInt(commandArr[2]);
+                    arg1 = Integer.parseInt(commandArr[1]);
+                    arg2 = Integer.parseInt(commandArr[2]);
                     System.out.println(calc.divide(arg1, arg2));
                     break;
                 case "fibonnacci":
@@ -58,7 +60,7 @@ public class Main {
                         System.out.println("must have one argument.");
                         continue;
                     }
-                    int arg1 = Integer.parseInt(commandArr[1]);
+                    arg1 = Integer.parseInt(commandArr[1]);
                     System.out.println(calc.fibonacciNumberFinder(arg1));
                     break;
                 case "binary":
@@ -66,7 +68,7 @@ public class Main {
                         System.out.println("must have one argument.");
                         continue;
                     }
-                    int arg1 = Integer.parseInt(commandArr[1]);
+                    arg1 = Integer.parseInt(commandArr[1]);
                     System.out.println(calc.intToBinaryNumber(arg1));
                     break;
             }
